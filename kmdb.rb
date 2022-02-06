@@ -269,6 +269,7 @@ puts ""
 # TODO!
 
 movies = Movie.all
+people = Person.all
 
 for movie in movies
     puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.director_id}"
@@ -283,7 +284,6 @@ puts ""
 roles = Role.all
 
 for role in roles
-    movie.id = role.movie_id
     puts "#{role.movie_id} #{role.actor_id} #{role.character_name}"
 end
 
