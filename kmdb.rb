@@ -268,8 +268,10 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
-for title in Movie
-    puts "#{title} #{year_released} #{rated} #{director_id}"
+movies = Movie.all
+
+for movie in movies
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.director_id}"
 end
 
 # Prints a header for the cast output
@@ -277,6 +279,13 @@ puts ""
 puts "Top Cast"
 puts "========"
 puts ""
+
+roles = Role.all
+
+for role in roles
+    movie.id = role.movie_id
+    puts "#{role.movie_id} #{role.actor_id} #{role.character_name}"
+end
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
